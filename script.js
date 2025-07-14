@@ -3,25 +3,39 @@ let sum = a + b;
 return sum;
 };
 
-console.log(add(32, 10));
+
 
 function subtract(a, b){
     let sum = a - b;
     return sum;
 };
 
-console.log(subtract(100, 73));
+
 
 function multiply(a, b){
     let sum = a * b;
     return sum;
 };
 
-console.log(multiply(2, 30));
+
 
 function divide(a, b){
     let sum = a / b;
     return sum;
 }
 
-console.log(divide(9, 3));
+let numberOne = 33;
+let numberTwo = 45;
+let operator;
+
+function operate(op){
+    if (op == "addition"){
+        add(numberOne, numberTwo);
+    }else{
+        return "oops";
+    }
+}
+
+console.log(operate("addition"))
+
+console.log(add(3, 2))
