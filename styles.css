@@ -1,0 +1,24 @@
+.container{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.bezel{
+    border: solid black 3px;
+    height: 500px;
+    width: 300px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.display{
+    border: solid black 3px;
+    height: 75px;
+    width: 250px;
+    margin-bottom: 350px;
+}
