@@ -27,3 +27,23 @@
 .buttonBox{
     display: flex;
 }
+
+.buttonsLeft{
+    display: flex;
+    flex-direction: column;
+}
+
+.buttonsLeftCenter{
+    display: flex;
+    flex-direction: column;
+}
+
+.buttonsRightCenter{
+    display: flex;
+    flex-direction: column;
+}
+
+.buttonsRight{
+    display: flex;
+    flex-direction: column;
+}
