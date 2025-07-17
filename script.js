@@ -10,12 +10,12 @@ let operator;
 let nOne;
 let nTwo;
 
+//will need? or will need to update these for operate function to work;
+
 let addButton = document.querySelector(".addition");
 let subtractButton = document.querySelector(".subtraction");
 let multiplyButton = document.querySelector(".multiplication");
 let divideButton = document.querySelector(".division");
-
-let display = document.querySelector(".display");
 
 
 function operate(operator, a, b){
@@ -33,15 +33,21 @@ function operate(operator, a, b){
     }
 
 }
+//Finish logic for each button;
+let display = document.querySelector(".display");
 
 let allButtons = document.querySelectorAll(".buttons");
 allButtons.forEach(button => { button.addEventListener("click", ()=> {
     if(button.id === "seven"){
-        display.textContent = "7";
-    }else{
-        console.log("fail")
+        let integer = 7;
+        display.append(integer);
+    }else if(button.id ==="eight"){
+        let integer = 8;
+        display.append(integer);
     }
 
 })
 
 })
+
+//when = is hit, take display info into operate, display operate's return and save the value to continue to be modified;
