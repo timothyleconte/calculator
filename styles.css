@@ -19,10 +19,11 @@
 
 .display{
     border: solid black 3px;
-    height: 75px;
+    height: 40px;
     width: 250px;
     /* margin-bottom: 350px; */
     text-align: right;
+    word-wrap: break-word;
 }
 
 .buttonBox{
