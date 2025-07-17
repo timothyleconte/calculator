@@ -32,10 +32,11 @@ function operate(operator, a, b){
 
 }
 
-console.log(operate(addButton, 3, 7))
+let clickCount = 0
 
-console.log(operate(divideButton, 10, 5));
+const display = document.querySelector(".display");
 
-console.log(operate(multiplyButton, 7, 3));
-
-console.log(operate(subtractButton, 3, 1));
+const button = document.querySelectorAll("button");
+button.addEventListener("click", () => {
+  display.textContent = 7;
+});
