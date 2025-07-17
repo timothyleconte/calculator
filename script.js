@@ -15,6 +15,8 @@ let subtractButton = document.querySelector(".subtraction");
 let multiplyButton = document.querySelector(".multiplication");
 let divideButton = document.querySelector(".division");
 
+let display = document.querySelector(".display");
+
 
 function operate(operator, a, b){
 
@@ -33,8 +35,12 @@ function operate(operator, a, b){
 }
 
 let allButtons = document.querySelectorAll(".buttons");
-allButtons.forEach(buttons => { buttons.addEventListener("click", ()=> {
-    console.log("test");
+allButtons.forEach(button => { button.addEventListener("click", ()=> {
+    if(button.id === "seven"){
+        display.textContent = "7";
+    }else{
+        console.log("fail")
+    }
 
 })
 
