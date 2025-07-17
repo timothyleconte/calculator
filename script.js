@@ -32,11 +32,10 @@ function operate(operator, a, b){
 
 }
 
-let clickCount = 0
+let allButtons = document.querySelectorAll(".buttons");
+allButtons.forEach(buttons => { buttons.addEventListener("click", ()=> {
+    console.log("test");
 
-const display = document.querySelector(".display");
+})
 
-const button = document.querySelectorAll("button");
-button.addEventListener("click", () => {
-  display.textContent = 7;
-});
+})
