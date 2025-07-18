@@ -6,19 +6,19 @@ multiply = (a, b) => a * b;
 
 divide = (a, b) => a / b;
 
-let operator;
-let nOne;
-let nTwo;
+// let operator;
+// let nOne;
+// let nTwo;
 
 //will even need? or will need to update these for operate function to work;
 
-let addButton = document.querySelector(".addition");
-let subtractButton = document.querySelector(".subtraction");
-let multiplyButton = document.querySelector(".multiplication");
-let divideButton = document.querySelector(".division");
+let addButton = "+";
+let subtractButton = "-";
+let multiplyButton = "*";
+let divideButton = "/";
 
 
-function operate(operator, a, b){
+function operate(a, b, operator){
 
     if (operator === addButton){
         return add(a, b);
@@ -70,16 +70,16 @@ allButtons.forEach(button => { button.addEventListener("click", ()=> {
         let integer = 0;
         display.append(integer);
     }else if (button.id === "add"){
-        let operator = "+";
+        let operator = " + " ;
         display.append(operator);
     }else if (button.id === "subtract"){
-        let operator = "-";
+        let operator = " - ";
         display.append(operator);
     }else if (button.id === "multiply"){
-        let operator = "*";
+        let operator = " * ";
         display.append(operator);
     }else if (button.id === "divide"){
-        let operator = "/";
+        let operator = " / ";
         display.append(operator);
     }else if (button.id === "decimal"){
         let operator = ".";
@@ -91,7 +91,16 @@ allButtons.forEach(button => { button.addEventListener("click", ()=> {
         let newDisplay = currentDisplay.slice(0, -1);
         display.textContent = newDisplay;
     }else if (button.id === "equals"){
-        console.log("not ready yet!");
+       let displayProblem = display.textContent;
+       let operators = /[+\-*/]/;
+       let integerArray = displayProblem.split(operators);
+       let numberOne = integerArray[0].trim();
+       let numberTwo = integerArray[1].trim();
+       console.log(numberOne);
+       console.log(numberTwo);
+       //first attempts at pulling the numbers out in order to get into function; I think i want to revisit this
+       //have the display text area that initially shows the math problem return the answer on that text line
+       //while putting the original problem one line above it
     }
 
 })
@@ -101,3 +110,10 @@ allButtons.forEach(button => { button.addEventListener("click", ()=> {
 //when = is hit, take display info into operate, display operate's return as answer on display and 
 // save the value (answer) to continue to be modified; delete will delete a single character within display
 //clear will clear all data from functions and screen
+
+// let fullExpression = display.textContent;
+// let operatorIndex = fullExpression.indexOf("+" || "-" || "*" || "/");
+// let numberBefore = fullExpression.slice(0, operatorIndex);
+// let numberAfter = fullExpression.slice(operatorIndex,)
+
+let displayProblem = display.textContent;

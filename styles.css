@@ -21,7 +21,7 @@
     border: solid black 3px;
     height: 40px;
     width: 250px;
-    /* margin-bottom: 350px; */
+    margin-bottom: 100px;
     text-align: right;
     word-wrap: break-word;
 }
