@@ -36,60 +36,63 @@ function operate(a, b, operator){
 //Finish logic for each button;
 
 let display = document.querySelector(".display");
+let bottomDisplay = document.querySelector(".bottom");
+let topDisplay = document.querySelector(".top");
 
 let allButtons = document.querySelectorAll(".buttons");
 allButtons.forEach(button => { button.addEventListener("click", ()=> {
     if(button.id === "one"){
         let integer = 1;
-        display.append(integer);
+        bottomDisplay.append(integer);
     }else if(button.id === "two"){
         let integer = 2;
-        display.append(integer);
+        bottomDisplay.append(integer);
     }else if(button.id === "three"){
         let integer = 3;
-        display.append(integer);
+        bottomDisplay.append(integer);
     }else if (button.id === "four"){
         let integer = 4;
-        display.append(integer);
+        bottomDisplay.append(integer);
     }else if (button.id === "five"){
         let integer = 5;
-        display.append(integer);
+        bottomDisplay.append(integer);
     }else if (button.id === "six"){
         let integer = 6;
-        display.append(integer);
+        bottomDisplay.append(integer);
     }else if (button.id === "seven"){
         let integer = 7;
-        display.append(integer);
+        bottomDisplay.append(integer);
     }else if (button.id === "eight"){
         let integer = 8;
-        display.append(integer);
+        bottomDisplay.append(integer);
     }else if (button.id === "nine"){
         let integer = 9;
-        display.append(integer);
+        bottomDisplay.append(integer);
     }else if (button.id === "zero"){
         let integer = 0;
-        display.append(integer);
+        bottomDisplay.append(integer);
     }else if (button.id === "add"){
         let operator = " + " ;
-        display.append(operator);
+        bottomDisplay.append(operator);
     }else if (button.id === "subtract"){
         let operator = " - ";
-        display.append(operator);
+        bottomDisplay.append(operator);
     }else if (button.id === "multiply"){
         let operator = " * ";
-        display.append(operator);
+        bottomDisplay.append(operator);
     }else if (button.id === "divide"){
         let operator = " / ";
-        display.append(operator);
+        bottomDisplay.append(operator);
     }else if (button.id === "decimal"){
         let operator = ".";
-        display.append(operator);
+        bottomDisplay.append(operator);
     }else if (button.id === "clearAll"){
-        display.textContent = "";
+        bottomDisplay.textContent = "";
+        topDisplay.textContent = "";
     }else if (button.id === "delete"){
-        let currentDisplay = display.textContent;
+        let currentDisplay = bottomDisplay.textContent;
         let newDisplay = currentDisplay.slice(0, -1);
-        display.textContent = newDisplay;
+        bottomDisplay.textContent = newDisplay;
     }else if (button.id === "equals"){
        let displayProblem = display.textContent;
        let operators = /[+\-*/]/;
