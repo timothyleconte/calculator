@@ -21,18 +21,19 @@ divide = (a, b) => a / b;
 function operate(a, b, operator){
 
     if (operator === "+"){
-        return add(a, b);
+        let answer = add(a, b);
+        return parseFloat(answer.toFixed(2));
     }else if (operator === "-"){
         let answer = subtract(a, b);
-        return answer.toFixed(2);
+        return parseFloat(answer.toFixed(2));
     }else if(operator === "*"){
         let answer = multiply(a, b);
-        return answer.toFixed(2);
+        return parseFloat(answer.toFixed(2));
     }else if(operator === "/"){
         let answer = divide(a, b);
-        return answer.toFixed(2);
+        return parseFloat(answer.toFixed(2));
     }else{
-        return "null";
+        return "something went really wrong";
     }
 
 }
@@ -107,8 +108,8 @@ allButtons.forEach(button => { button.addEventListener("click", ()=> {
        let operators = /[+\-*/]/;
        let problem = topDisplay.textContent;
        let integerArray = problem.split(operators);
-       let numberOne = integerArray[0].trim();
-       let numberTwo = integerArray[1].trim();
+       let numberOne = parseInt(integerArray[0].trim());
+       let numberTwo = parseInt(integerArray[1].trim());
        let extractOperator = problem.split(" ");
        let finalOperator = extractOperator[1];
        bottomDisplay.textContent = operate(numberOne, numberTwo, finalOperator);
