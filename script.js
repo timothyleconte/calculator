@@ -12,22 +12,25 @@ divide = (a, b) => a / b;
 
 //will even need? or will need to update these for operate function to work;
 
-let addButton = "+";
-let subtractButton = "-";
-let multiplyButton = "*";
-let divideButton = "/";
+// let addButton = "+";
+// let subtractButton = "-";
+// let multiplyButton = "*";
+// let divideButton = "/";
 
 
 function operate(a, b, operator){
 
-    if (operator === addButton){
+    if (operator === "+"){
         return add(a, b);
-    }else if (operator === subtractButton){
-        return subtract(a, b);
-    }else if(operator === multiplyButton){
-        return multiply(a, b);
-    }else if(operator === divideButton){
-        return divide(a, b);
+    }else if (operator === "-"){
+        let answer = subtract(a, b);
+        return answer.toFixed(2);
+    }else if(operator === "*"){
+        let answer = multiply(a, b);
+        return answer.toFixed(2);
+    }else if(operator === "/"){
+        let answer = divide(a, b);
+        return answer.toFixed(2);
     }else{
         return "null";
     }
@@ -72,18 +75,21 @@ allButtons.forEach(button => { button.addEventListener("click", ()=> {
         let integer = 0;
         bottomDisplay.append(integer);
     }else if (button.id === "add"){
-        let operator = " + " ;
+        let operator = " + ";
         topDisplay.append(bottomDisplay.textContent, operator);
         bottomDisplay.textContent = "";
     }else if (button.id === "subtract"){
         let operator = " - ";
-        bottomDisplay.append(operator);
+        topDisplay.append(bottomDisplay.textContent, operator);
+        bottomDisplay.textContent = "";
     }else if (button.id === "multiply"){
         let operator = " * ";
-        bottomDisplay.append(operator);
+        topDisplay.append(bottomDisplay.textContent, operator);
+        bottomDisplay.textContent = "";
     }else if (button.id === "divide"){
         let operator = " / ";
-        bottomDisplay.append(operator);
+        topDisplay.append(bottomDisplay.textContent, operator);
+        bottomDisplay.textContent = "";
     }else if (button.id === "decimal"){
         let operator = ".";
         bottomDisplay.append(operator);
@@ -97,21 +103,22 @@ allButtons.forEach(button => { button.addEventListener("click", ()=> {
     }else if (button.id === "clear"){
         bottomDisplay.textContent = "";
     }else if (button.id === "equals"){
-       let displayProblem = display.textContent;
+       topDisplay.append(bottomDisplay.textContent);
        let operators = /[+\-*/]/;
-       let integerArray = displayProblem.split(operators);
+       let problem = topDisplay.textContent;
+       let integerArray = problem.split(operators);
        let numberOne = integerArray[0].trim();
        let numberTwo = integerArray[1].trim();
-       console.log(numberOne);
-       console.log(numberTwo);
-       //first attempts at pulling the numbers out in order to get into function; I think i want to revisit this
-       //have the display text area that initially shows the math problem return the answer on that text line
-       //while putting the original problem one line above it
+       let extractOperator = problem.split(" ");
+       let finalOperator = extractOperator[1];
+       bottomDisplay.textContent = operate(numberOne, numberTwo, finalOperator);
     }
 
 })
 
 })
+
+//BELOW IS TESTING OF OTHER SCRIPT/LOGIC;
 
 //when = is hit, take display info into operate, display operate's return as answer on display and 
 // save the value (answer) to continue to be modified; delete will delete a single character within display
@@ -122,4 +129,15 @@ allButtons.forEach(button => { button.addEventListener("click", ()=> {
 // let numberBefore = fullExpression.slice(0, operatorIndex);
 // let numberAfter = fullExpression.slice(operatorIndex,)
 
-let displayProblem = display.textContent;
+// let displayProblem = display.textContent;
+
+// let displayProblem = display.textContent;
+    //    let operators = /[+\-*/]/;
+    //    let integerArray = displayProblem.split(operators);
+    //    let numberOne = integerArray[0].trim();
+    //    let numberTwo = integerArray[1].trim();
+    //    console.log(numberOne);
+    //    console.log(numberTwo);
+       //first attempts at pulling the numbers out in order to get into function; I think i want to revisit this
+       //have the display text area that initially shows the math problem return the answer on that text line
+       //while putting the original problem one line above it
