@@ -6,17 +6,8 @@ multiply = (a, b) => a * b;
 
 divide = (a, b) => a / b;
 
-// let operator;
-// let nOne;
-// let nTwo;
-
-//will even need? or will need to update these for operate function to work;
-
-// let addButton = "+";
-// let subtractButton = "-";
-// let multiplyButton = "*";
-// let divideButton = "/";
-
+//still need to work on floating point number accuracy within operate function - current returns are NOT right. 7/19 0355
+//maybe it's just straight up to fixed?
 
 function operate(a, b, operator){
 
