@@ -19,12 +19,25 @@
 
 .display{
     border: solid black 3px;
-    height: 40px;
+    height: 100px;
     width: 250px;
     margin-bottom: 100px;
     text-align: right;
     word-wrap: break-word;
+    display: flex;
+    flex-direction: column;
 }
+
+.top{
+    height: 50px;
+    border-bottom: solid black 2px;
+}
+
+.bottom{
+    height: 50px;
+    font-size: 2em;
+}
+
 
 .buttonBox{
     display: flex;

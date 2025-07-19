@@ -73,7 +73,8 @@ allButtons.forEach(button => { button.addEventListener("click", ()=> {
         bottomDisplay.append(integer);
     }else if (button.id === "add"){
         let operator = " + " ;
-        bottomDisplay.append(operator);
+        topDisplay.append(bottomDisplay.textContent, operator);
+        bottomDisplay.textContent = "";
     }else if (button.id === "subtract"){
         let operator = " - ";
         bottomDisplay.append(operator);
@@ -93,6 +94,8 @@ allButtons.forEach(button => { button.addEventListener("click", ()=> {
         let currentDisplay = bottomDisplay.textContent;
         let newDisplay = currentDisplay.slice(0, -1);
         bottomDisplay.textContent = newDisplay;
+    }else if (button.id === "clear"){
+        bottomDisplay.textContent = "";
     }else if (button.id === "equals"){
        let displayProblem = display.textContent;
        let operators = /[+\-*/]/;
