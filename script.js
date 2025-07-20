@@ -6,9 +6,6 @@ multiply = (a, b) => a * b;
 
 divide = (a, b) => a / b;
 
-//still need to work on floating point number accuracy within operate function - current returns are NOT right. 7/19 0355
-//maybe it's just straight up to fixed?
-
 function operate(a, b, operator){
 
     if (operator === "+"){
@@ -109,27 +106,3 @@ allButtons.forEach(button => { button.addEventListener("click", ()=> {
 })
 
 })
-
-//BELOW IS TESTING OF OTHER SCRIPT/LOGIC;
-
-//when = is hit, take display info into operate, display operate's return as answer on display and 
-// save the value (answer) to continue to be modified; delete will delete a single character within display
-//clear will clear all data from functions and screen
-
-// let fullExpression = display.textContent;
-// let operatorIndex = fullExpression.indexOf("+" || "-" || "*" || "/");
-// let numberBefore = fullExpression.slice(0, operatorIndex);
-// let numberAfter = fullExpression.slice(operatorIndex,)
-
-// let displayProblem = display.textContent;
-
-// let displayProblem = display.textContent;
-    //    let operators = /[+\-*/]/;
-    //    let integerArray = displayProblem.split(operators);
-    //    let numberOne = integerArray[0].trim();
-    //    let numberTwo = integerArray[1].trim();
-    //    console.log(numberOne);
-    //    console.log(numberTwo);
-       //first attempts at pulling the numbers out in order to get into function; I think i want to revisit this
-       //have the display text area that initially shows the math problem return the answer on that text line
-       //while putting the original problem one line above it
