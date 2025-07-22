@@ -26,13 +26,21 @@ function operate(a, b, operator){
 
 }
 //Finish logic for each button;
-
 let display = document.querySelector(".display");
 let bottomDisplay = document.querySelector(".bottom");
 let topDisplay = document.querySelector(".top");
-
 let allButtons = document.querySelectorAll(".buttons");
+let decimalCount = 0;
+
 allButtons.forEach(button => { button.addEventListener("click", ()=> {
+
+    if (button.id === "decimal"){
+        decimalCount++;
+    }
+    if (button.id === "decimal" && decimalCount > 1){
+        return;
+    }
+
     if(button.id === "one"){
         let integer = 1;
         bottomDisplay.append(integer);
@@ -67,30 +75,40 @@ allButtons.forEach(button => { button.addEventListener("click", ()=> {
         let operator = " + ";
         topDisplay.append(bottomDisplay.textContent, operator);
         bottomDisplay.textContent = "";
+        decimalCount = 0;
     }else if (button.id === "subtract"){
         let operator = " - ";
         topDisplay.append(bottomDisplay.textContent, operator);
         bottomDisplay.textContent = "";
+        decimalCount = 0;
     }else if (button.id === "multiply"){
         let operator = " * ";
         topDisplay.append(bottomDisplay.textContent, operator);
         bottomDisplay.textContent = "";
+        decimalCount = 0;
     }else if (button.id === "divide"){
         let operator = " / ";
         topDisplay.append(bottomDisplay.textContent, operator);
         bottomDisplay.textContent = "";
+        decimalCount = 0;
     }else if (button.id === "decimal"){
         let operator = ".";
         bottomDisplay.append(operator);
     }else if (button.id === "clearAll"){
         bottomDisplay.textContent = "";
         topDisplay.textContent = "";
+        decimalCount = 0;
     }else if (button.id === "delete"){
         let currentDisplay = bottomDisplay.textContent;
         let newDisplay = currentDisplay.slice(0, -1);
         bottomDisplay.textContent = newDisplay;
+        decimalCount = 0;
+        if (bottomDisplay.textContent.includes(".")){
+            decimalCount = 1;
+        }
     }else if (button.id === "clear"){
         bottomDisplay.textContent = "";
+        decimalCount = 0;
     }else if (button.id === "equals"){
        topDisplay.append(bottomDisplay.textContent);
        let operators = /[+\-*/]/;
@@ -102,8 +120,8 @@ allButtons.forEach(button => { button.addEventListener("click", ()=> {
        let finalOperator = extractOperator[1];
        bottomDisplay.textContent = operate(numberOne, numberTwo, finalOperator);
        topDisplay.textContent = "";
+       decimalCount = 0;
     }
-
 })
 
 })
