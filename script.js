@@ -101,6 +101,7 @@ allButtons.forEach(button => { button.addEventListener("click", ()=> {
        let extractOperator = problem.split(" ");
        let finalOperator = extractOperator[1];
        bottomDisplay.textContent = operate(numberOne, numberTwo, finalOperator);
+       topDisplay.textContent = "";
     }
 
 })
