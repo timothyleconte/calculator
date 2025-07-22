@@ -25,7 +25,7 @@ function operate(a, b, operator){
     }
 
 }
-//Finish logic for each button;
+
 let display = document.querySelector(".display");
 let bottomDisplay = document.querySelector(".bottom");
 let topDisplay = document.querySelector(".top");
@@ -34,12 +34,16 @@ let decimalCount = 0;
 
 allButtons.forEach(button => { button.addEventListener("click", ()=> {
 
+
+//prevent multiple decimal places in a single number;
+
     if (button.id === "decimal"){
         decimalCount++;
     }
     if (button.id === "decimal" && decimalCount > 1){
         return;
     }
+
 
     if(button.id === "one"){
         let integer = 1;
@@ -103,9 +107,9 @@ allButtons.forEach(button => { button.addEventListener("click", ()=> {
         let newDisplay = currentDisplay.slice(0, -1);
         bottomDisplay.textContent = newDisplay;
         decimalCount = 0;
-        if (bottomDisplay.textContent.includes(".")){
+            if (bottomDisplay.textContent.includes(".")){
             decimalCount = 1;
-        }
+            }
     }else if (button.id === "clear"){
         bottomDisplay.textContent = "";
         decimalCount = 0;
@@ -122,6 +126,7 @@ allButtons.forEach(button => { button.addEventListener("click", ()=> {
        topDisplay.textContent = "";
        decimalCount = 0;
     }
+
 })
 
 })
