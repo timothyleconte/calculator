@@ -77,7 +77,8 @@ allButtons.forEach(button => { button.addEventListener("click", ()=> {
         bottomDisplay.append(integer);
     }else if (button.id === "add"){
         let operator = " + ";
-        if(topDisplay.textContent.includes(" + " || " - " || " * " || " / ")){
+        if(topDisplay.textContent.includes(" + ") || topDisplay.textContent.includes(" - ") 
+            || topDisplay.textContent.includes(" * ") || topDisplay.textContent.includes(" / ")){
             topDisplay.append(bottomDisplay.textContent);
             let operators = /[+\-*/]/;
             let problem = topDisplay.textContent;
@@ -95,16 +96,58 @@ allButtons.forEach(button => { button.addEventListener("click", ()=> {
         decimalCount = 0;
     }else if (button.id === "subtract"){
         let operator = " - ";
+        if(topDisplay.textContent.includes(" + ") || topDisplay.textContent.includes(" - ") 
+            || topDisplay.textContent.includes(" * ") || topDisplay.textContent.includes(" / ")){
+            topDisplay.append(bottomDisplay.textContent);
+            let operators = /[+\-*/]/;
+            let problem = topDisplay.textContent;
+            let integerArray = problem.split(operators);
+            let numberOne = parseFloat(integerArray[0].trim());
+            let numberTwo = parseFloat(integerArray[1].trim());
+            let extractOperator = problem.split(" ");
+            let finalOperator = extractOperator[1];
+            bottomDisplay.textContent = operate(numberOne, numberTwo, finalOperator);
+            topDisplay.textContent = "";
+            decimalCount = 0;
+        }
         topDisplay.append(bottomDisplay.textContent, operator);
         bottomDisplay.textContent = "";
         decimalCount = 0;
     }else if (button.id === "multiply"){
         let operator = " * ";
+        if(topDisplay.textContent.includes(" + ") || topDisplay.textContent.includes(" - ") 
+            || topDisplay.textContent.includes(" * ") || topDisplay.textContent.includes(" / ")){
+            topDisplay.append(bottomDisplay.textContent);
+            let operators = /[+\-*/]/;
+            let problem = topDisplay.textContent;
+            let integerArray = problem.split(operators);
+            let numberOne = parseFloat(integerArray[0].trim());
+            let numberTwo = parseFloat(integerArray[1].trim());
+            let extractOperator = problem.split(" ");
+            let finalOperator = extractOperator[1];
+            bottomDisplay.textContent = operate(numberOne, numberTwo, finalOperator);
+            topDisplay.textContent = "";
+            decimalCount = 0;
+        }
         topDisplay.append(bottomDisplay.textContent, operator);
         bottomDisplay.textContent = "";
         decimalCount = 0;
     }else if (button.id === "divide"){
         let operator = " / ";
+        if(topDisplay.textContent.includes(" + ") || topDisplay.textContent.includes(" - ") 
+            || topDisplay.textContent.includes(" * ") || topDisplay.textContent.includes(" / ")){
+            topDisplay.append(bottomDisplay.textContent);
+            let operators = /[+\-*/]/;
+            let problem = topDisplay.textContent;
+            let integerArray = problem.split(operators);
+            let numberOne = parseFloat(integerArray[0].trim());
+            let numberTwo = parseFloat(integerArray[1].trim());
+            let extractOperator = problem.split(" ");
+            let finalOperator = extractOperator[1];
+            bottomDisplay.textContent = operate(numberOne, numberTwo, finalOperator);
+            topDisplay.textContent = "";
+            decimalCount = 0;
+        }
         topDisplay.append(bottomDisplay.textContent, operator);
         bottomDisplay.textContent = "";
         decimalCount = 0;
