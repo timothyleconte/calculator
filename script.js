@@ -31,6 +31,7 @@ let bottomDisplay = document.querySelector(".bottom");
 let topDisplay = document.querySelector(".top");
 let allButtons = document.querySelectorAll(".buttons");
 let decimalCount = 0;
+let clearCount = 0; //counter to start new operation if a digit is hit with other digits in display after a computation
 
 allButtons.forEach(button => { button.addEventListener("click", ()=> {
 
@@ -44,6 +45,22 @@ allButtons.forEach(button => { button.addEventListener("click", ()=> {
         return;
     }
 
+    //working on logic to clear the displays/operate function if user does a calculation and then hits an integer while there
+    //is a sum in the bottom display thus ending that calculation sequence and starting a new one. not working quite yet.
+    //i believe this is a start but need to think through it more
+
+    // if(button.id === "one" || "two" || "three" || "four" || "five" || "six" || "seven" ||  "eight" || "nine" || "zero"
+    //     || "equals"
+    // ){
+    //     clearCount++;
+    // }
+    // console.log(clearCount);
+
+    // if (clearCount > 1 && /\d/.test(bottomDisplay.textContent) && topDisplay.textContent.includes(" + ")
+    // || topDisplay.textContent.includes(" - ") || topDisplay.textContent.includes(" / ") || topDisplay.textContent.includes(" * ")){
+    //     bottomDisplay.textContent = "";
+    //     topDisplay.textContent = "";
+    // }
 
     if(button.id === "one"){
         let integer = 1;
