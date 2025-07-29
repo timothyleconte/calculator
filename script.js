@@ -31,7 +31,7 @@ let bottomDisplay = document.querySelector(".bottom");
 let topDisplay = document.querySelector(".top");
 let allButtons = document.querySelectorAll(".buttons");
 let decimalCount = 0;
-let clearCount = 0; //counter to start new operation if a digit is hit with other digits in display after a computation
+let equalCount = 0;
 
 allButtons.forEach(button => { button.addEventListener("click", ()=> {
 
@@ -45,22 +45,14 @@ allButtons.forEach(button => { button.addEventListener("click", ()=> {
         return;
     }
 
-    //working on logic to clear the displays/operate function if user does a calculation and then hits an integer while there
-    //is a sum in the bottom display thus ending that calculation sequence and starting a new one. not working quite yet.
-    //i believe this is a start but need to think through it more
+//prevent user from hitting equal back to back
 
-    // if(button.id === "one" || "two" || "three" || "four" || "five" || "six" || "seven" ||  "eight" || "nine" || "zero"
-    //     || "equals"
-    // ){
-    //     clearCount++;
-    // }
-    // console.log(clearCount);
-
-    // if (clearCount > 1 && /\d/.test(bottomDisplay.textContent) && topDisplay.textContent.includes(" + ")
-    // || topDisplay.textContent.includes(" - ") || topDisplay.textContent.includes(" / ") || topDisplay.textContent.includes(" * ")){
-    //     bottomDisplay.textContent = "";
-    //     topDisplay.textContent = "";
-    // }
+    if (button.id === "equals"){
+        equalCount++;
+    }
+    if (button.id === "equals" && equalCount > 1){
+        return;
+    }
 
     if(button.id === "one"){
         let integer = 1;
@@ -107,10 +99,12 @@ allButtons.forEach(button => { button.addEventListener("click", ()=> {
             bottomDisplay.textContent = operate(numberOne, numberTwo, finalOperator);
             topDisplay.textContent = "";
             decimalCount = 0;
+            equalCount = 0;
         }
         topDisplay.append(bottomDisplay.textContent, operator);
         bottomDisplay.textContent = "";
         decimalCount = 0;
+        equalCount = 0;
     }else if (button.id === "subtract"){
         let operator = " - ";
         if(topDisplay.textContent.includes(" + ") || topDisplay.textContent.includes(" - ") 
@@ -126,10 +120,12 @@ allButtons.forEach(button => { button.addEventListener("click", ()=> {
             bottomDisplay.textContent = operate(numberOne, numberTwo, finalOperator);
             topDisplay.textContent = "";
             decimalCount = 0;
+            equalCount = 0;
         }
         topDisplay.append(bottomDisplay.textContent, operator);
         bottomDisplay.textContent = "";
         decimalCount = 0;
+        equalCount = 0;
     }else if (button.id === "multiply"){
         let operator = " * ";
         if(topDisplay.textContent.includes(" + ") || topDisplay.textContent.includes(" - ") 
@@ -145,10 +141,12 @@ allButtons.forEach(button => { button.addEventListener("click", ()=> {
             bottomDisplay.textContent = operate(numberOne, numberTwo, finalOperator);
             topDisplay.textContent = "";
             decimalCount = 0;
+            equalCount = 0;
         }
         topDisplay.append(bottomDisplay.textContent, operator);
         bottomDisplay.textContent = "";
         decimalCount = 0;
+        equalCount = 0;
     }else if (button.id === "divide"){
         let operator = " / ";
         if(topDisplay.textContent.includes(" + ") || topDisplay.textContent.includes(" - ") 
@@ -164,10 +162,12 @@ allButtons.forEach(button => { button.addEventListener("click", ()=> {
             bottomDisplay.textContent = operate(numberOne, numberTwo, finalOperator);
             topDisplay.textContent = "";
             decimalCount = 0;
+            equalCount = 0;
         }
         topDisplay.append(bottomDisplay.textContent, operator);
         bottomDisplay.textContent = "";
         decimalCount = 0;
+        equalCount = 0;
     }else if (button.id === "decimal"){
         let operator = ".";
         bottomDisplay.append(operator);
@@ -203,6 +203,5 @@ allButtons.forEach(button => { button.addEventListener("click", ()=> {
 })
 
 })
-
 
 //if top display has an operator, operator hit => evaluate bottom display with top display, display answer on bottom display;
