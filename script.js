@@ -36,7 +36,7 @@ let equalCount = 0;
 allButtons.forEach(button => { button.addEventListener("click", ()=> {
 
 
-//prevent multiple decimal places in a single number;
+//prevent multiple decimal places in a single number
 
     if (button.id === "decimal"){
         decimalCount++;
@@ -52,6 +52,32 @@ allButtons.forEach(button => { button.addEventListener("click", ()=> {
     }
     if (button.id === "equals" && equalCount > 1){
         return;
+    }
+
+//start new calculation after mathematical operation is completed and new digit hit
+
+    if (equalCount >= 1){
+        if(button.id === "one"){
+            bottomDisplay.textContent = "";
+        }else if (button.id === "two"){
+            bottomDisplay.textContent = "";
+        }else if (button.id === "three"){
+            bottomDisplay.textContent = "";
+        }else if (button.id === "four"){
+            bottomDisplay.textContent = "";
+        }else if (button.id === "five"){
+            bottomDisplay.textContent = "";
+        }else if (button.id === "six"){
+            bottomDisplay.textContent = "";
+        }else if (button.id === "seven"){
+            bottomDisplay.textContent = "";
+        }else if (button.id === "eight"){
+            bottomDisplay.textContent = "";
+        }else if (button.id === "nine"){
+            bottomDisplay.textContent = "";
+        }else if (button.id === "zero"){
+            bottomDisplay.textContent = "";
+        }
     }
 
     if(button.id === "one"){
