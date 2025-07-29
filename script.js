@@ -255,6 +255,9 @@ allButtons.forEach(button => { button.addEventListener("click", ()=> {
         bottomDisplay.textContent = "";
         decimalCount = 0;
     }else if (button.id === "equals"){
+        if(topDisplay.textContent === ""){
+            return;
+        }
        topDisplay.append(bottomDisplay.textContent);
        let operators = /[+\-*/]/;
        let problem = topDisplay.textContent;
