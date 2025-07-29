@@ -80,36 +80,60 @@ allButtons.forEach(button => { button.addEventListener("click", ()=> {
         }
     }
 
+//prevent operators from being hit back to back
+
+    if (bottomDisplay.textContent === ""){
+        if (button.id === "add"){
+            return;
+        }else if (button.id === "subtract"){
+            return;
+        }else if (button.id === "multiply"){
+            return;
+        }else if (button.id === "divide"){
+            return;
+        }
+    }
+
     if(button.id === "one"){
         let integer = 1;
         bottomDisplay.append(integer);
+        equalCount = 0;
     }else if(button.id === "two"){
         let integer = 2;
         bottomDisplay.append(integer);
+        equalCount = 0;
     }else if(button.id === "three"){
         let integer = 3;
         bottomDisplay.append(integer);
+        equalCount = 0;
     }else if (button.id === "four"){
         let integer = 4;
         bottomDisplay.append(integer);
+        equalCount = 0;
     }else if (button.id === "five"){
         let integer = 5;
         bottomDisplay.append(integer);
+        equalCount = 0;
     }else if (button.id === "six"){
         let integer = 6;
         bottomDisplay.append(integer);
+        equalCount = 0;
     }else if (button.id === "seven"){
         let integer = 7;
         bottomDisplay.append(integer);
+        equalCount = 0;
     }else if (button.id === "eight"){
         let integer = 8;
         bottomDisplay.append(integer);
+        equalCount = 0;
     }else if (button.id === "nine"){
         let integer = 9;
         bottomDisplay.append(integer);
+        equalCount = 0;
     }else if (button.id === "zero"){
         let integer = 0;
         bottomDisplay.append(integer);
+        equalCount = 0;
     }else if (button.id === "add"){
         let operator = " + ";
         if(topDisplay.textContent.includes(" + ") || topDisplay.textContent.includes(" - ") 
