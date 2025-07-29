@@ -239,6 +239,7 @@ allButtons.forEach(button => { button.addEventListener("click", ()=> {
     }else if (button.id === "decimal"){
         let operator = ".";
         bottomDisplay.append(operator);
+        equalCount = 0;
     }else if (button.id === "clearAll"){
         bottomDisplay.textContent = "";
         topDisplay.textContent = "";
