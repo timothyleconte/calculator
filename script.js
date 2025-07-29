@@ -80,7 +80,7 @@ allButtons.forEach(button => { button.addEventListener("click", ()=> {
         }
     }
 
-//prevent operators from being hit back to back
+//prevent operators from being hit back to back and equals from being hit during incomplete equation
 
     if (bottomDisplay.textContent === ""){
         if (button.id === "add"){
@@ -90,6 +90,24 @@ allButtons.forEach(button => { button.addEventListener("click", ()=> {
         }else if (button.id === "multiply"){
             return;
         }else if (button.id === "divide"){
+            return;
+        }else if (button.id === "equals"){
+            return;
+        }
+    }
+
+//prevent operators and equals from being hit before any digits are entered
+
+    if (bottomDisplay.textContent === "" && topDisplay.textContent === ""){
+        if (button.id === "add"){
+            return;
+        }else if (button.id === "subtract"){
+            return;
+        }else if (button.id === "multiply"){
+            return;
+        }else if (button.id === "divide"){
+            return;
+        }else if (button.id === "equals"){
             return;
         }
     }
