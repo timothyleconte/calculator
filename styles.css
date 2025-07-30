@@ -15,50 +15,70 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    background-color:cadetblue
 }
 
 .display{
     border: solid black 3px;
-    height: 100px;
+    height: 80px;
     width: 250px;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
     text-align: right;
-    word-wrap: break-word;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
+    border-radius: 5px;
 }
 
 .top{
-    height: 50px;
-    border-bottom: solid black 2px;
+    height: 40px;
+    /* border-bottom: solid black 2px; */
+    background-color: lightgray;
 }
 
 .bottom{
-    height: 50px;
+    height: 40px;
     font-size: 2em;
+    background-color: lightgray;
 }
 
 
 .buttonBox{
     display: flex;
+    justify-content: space-around;
 }
 
 .buttonsLeft{
     display: flex;
     flex-direction: column;
+    margin: 5px;
 }
 
 .buttonsLeftCenter{
     display: flex;
     flex-direction: column;
+    margin: 5px;
 }
 
 .buttonsRightCenter{
     display: flex;
     flex-direction: column;
+    margin: 5px;
 }
 
 .buttonsRight{
     display: flex;
     flex-direction: column;
+    margin: 5px;
+}
+
+button{
+    all: unset;
+    background-color: black;
+    color: white;
+    padding: 5px 8px 5px 8px;
+    border-radius: 5px;
+    font-size: 2em;
+    border: white solid 1px;
+    text-align: center;
 }
