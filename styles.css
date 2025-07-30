@@ -3,6 +3,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin-top: 100px;
 }
 
 
@@ -33,15 +34,15 @@
 .top{
     height: 40px;
     /* border-bottom: solid black 2px; */
-    background-color: darkgray;
-    color: white;
+    background-color: lightgray;
+    color: black;
 }
 
 .bottom{
     height: 40px;
     font-size: 2em;
-    background-color: darkgray;
-    color: white;
+    background-color: lightgray;
+    color: black;
 }
 
 
@@ -93,4 +94,27 @@ button{
 
 .clearButtons{
     font-size: 1em;
+}
+
+.calcTitle{
+    margin-left: -175px;
+    color: white;
+    font-family: sans-serif;
+}
+
+.designer{
+    margin-left: -150px;
+    font-size: 0.75em;
+    color: goldenrod;
+    font-family: sans-serif;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: goldenrod;
+    color: black;
+}
+
+button:active{
+    transform: scale(0.98);
 }
