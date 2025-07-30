@@ -33,52 +33,64 @@
 .top{
     height: 40px;
     /* border-bottom: solid black 2px; */
-    background-color: lightgray;
+    background-color: darkgray;
+    color: white;
 }
 
 .bottom{
     height: 40px;
     font-size: 2em;
-    background-color: lightgray;
+    background-color: darkgray;
+    color: white;
 }
 
 
 .buttonBox{
     display: flex;
     justify-content: space-around;
+    font-size: 2em;
+    gap: 2px;
 }
 
 .buttonsLeft{
     display: flex;
     flex-direction: column;
     margin: 5px;
+    gap: 5px;
 }
 
 .buttonsLeftCenter{
     display: flex;
     flex-direction: column;
     margin: 5px;
+    gap: 5px;
 }
 
 .buttonsRightCenter{
     display: flex;
     flex-direction: column;
     margin: 5px;
+    gap: 5px;
 }
 
 .buttonsRight{
     display: flex;
     flex-direction: column;
     margin: 5px;
+    gap: 5px;
 }
 
 button{
     all: unset;
     background-color: black;
     color: white;
-    padding: 5px 8px 5px 8px;
+    padding: 10px 15px 10px 15px;
     border-radius: 5px;
-    font-size: 2em;
+    /* font-size: 2em; */
     border: white solid 1px;
     text-align: center;
+}
+
+.clearButtons{
+    font-size: 1em;
 }
