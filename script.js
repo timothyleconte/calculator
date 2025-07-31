@@ -80,7 +80,7 @@ allButtons.forEach(button => { button.addEventListener("click", ()=> {
         }
     }
 
-//prevent operators from being hit back to back and equals from being hit during incomplete equation
+//prevent operators from being hit back to back and equals from being hit during an incomplete equation
 
     if (bottomDisplay.textContent === ""){
         if (button.id === "add"){
@@ -276,4 +276,49 @@ allButtons.forEach(button => { button.addEventListener("click", ()=> {
 
 })
 
-//if top display has an operator, operator hit => evaluate bottom display with top display, display answer on bottom display;
+//add keyboard support
+
+document.addEventListener("keydown", function(number){
+
+    if (number.key === "1"){
+        let integer = 1;
+        bottomDisplay.append(integer);
+        equalCount = 0;
+    }else if (number.key === "2"){
+        let integer = 2;
+        bottomDisplay.append(integer);
+        equalCount = 0;
+    }else if (number.key === "3"){
+        let integer = 3;
+        bottomDisplay.append(integer);
+        equalCount = 0;
+    }else if (number.key === "4"){
+        let integer = 4;
+        bottomDisplay.append(integer);
+        equalCount = 0;
+    }else if (number.key === "5"){
+        let integer = 5;
+        bottomDisplay.append(integer);
+        equalCount = 0;
+    }else if (number.key === "6"){
+        let integer = 6;
+        bottomDisplay.append(integer);
+        equalCount = 0;
+    }else if (number.key === "7"){
+        let integer = 7;
+        bottomDisplay.append(integer);
+        equalCount = 0;
+    }else if (number.key === "8"){
+        let integer = 8;
+        bottomDisplay.append(integer);
+        equalCount = 0;
+    }else if (number.key === "9"){
+        let integer = 9;
+        bottomDisplay.append(integer);
+        equalCount = 0;
+    }else if (number.key === "0"){
+        let integer = 0;
+        bottomDisplay.append(integer);
+        equalCount = 0;
+    }
+});
