@@ -23,3 +23,5 @@
 1824 - styling nearing completion! I went with a simple, minimalist vibe. I didn't want anything too crazy and I also didn't want to waste time messing with this project much longer as I'm ready to learn some new stuff. I'm going to run it by some people and then finalize it to submit!
 
 2143 - so I thought about the keyboard support again and I'm going to do it. I want to learn every bit I can from this project. Other than that, everything is complete! I've got the design how I like and everything is bug free. There seems to be some bugs on mobile but I have no idea how to address that yet. I'm going to start doing the keyboard stuff either tonight or tomorrow night!
+
+2201 - got all of the digits done and beginning to work through applying the shift key event listener; exhausted though so I will finish the code tomorrow and then --- project complete!
