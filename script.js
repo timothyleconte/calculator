@@ -320,5 +320,9 @@ document.addEventListener("keydown", function(number){
         let integer = 0;
         bottomDisplay.append(integer);
         equalCount = 0;
+    }else if (number.shiftKey === true && number.key === "*"){
+        console.log("working");
+
+        //this works - finish code tomorrow
     }
 });
