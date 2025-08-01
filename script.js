@@ -320,9 +320,109 @@ document.addEventListener("keydown", function(number){
         let integer = 0;
         bottomDisplay.append(integer);
         equalCount = 0;
-    }else if (number.shiftKey === true && number.key === "*"){
-        console.log("working");
+    }else if (number.key === "*"){
+        let operator = " * ";
+        
+        if(bottomDisplay.textContent === ""){
+            return;
+        };
 
-        //this works - finish code tomorrow
+        if(topDisplay.textContent.includes(" + ") || topDisplay.textContent.includes(" - ") 
+            || topDisplay.textContent.includes(" * ") || topDisplay.textContent.includes(" / ")){
+            topDisplay.append(bottomDisplay.textContent);
+            let operators = /[+\-*/]/;
+            let problem = topDisplay.textContent;
+            let integerArray = problem.split(operators);
+            let numberOne = parseFloat(integerArray[0].trim());
+            let numberTwo = parseFloat(integerArray[1].trim());
+            let extractOperator = problem.split(" ");
+            let finalOperator = extractOperator[1];
+            bottomDisplay.textContent = operate(numberOne, numberTwo, finalOperator);
+            topDisplay.textContent = "";
+            decimalCount = 0;
+            equalCount = 0;
+        };
+        topDisplay.append(bottomDisplay.textContent, operator);
+        bottomDisplay.textContent = "";
+        decimalCount = 0;
+        equalCount = 0;
+    }else if (number.key === "+"){
+        let operator = " + ";
+
+        if(bottomDisplay.textContent === ""){
+            return;
+        };
+
+        if(topDisplay.textContent.includes(" + ") || topDisplay.textContent.includes(" - ") 
+            || topDisplay.textContent.includes(" * ") || topDisplay.textContent.includes(" / ")){
+            topDisplay.append(bottomDisplay.textContent);
+            let operators = /[+\-*/]/;
+            let problem = topDisplay.textContent;
+            let integerArray = problem.split(operators);
+            let numberOne = parseFloat(integerArray[0].trim());
+            let numberTwo = parseFloat(integerArray[1].trim());
+            let extractOperator = problem.split(" ");
+            let finalOperator = extractOperator[1];
+            bottomDisplay.textContent = operate(numberOne, numberTwo, finalOperator);
+            topDisplay.textContent = "";
+            decimalCount = 0;
+            equalCount = 0;
+        };
+        topDisplay.append(bottomDisplay.textContent, operator);
+        bottomDisplay.textContent = "";
+        decimalCount = 0;
+        equalCount = 0;   
+    }else if (number.key === "/"){
+        let operator = " / ";
+
+        if(bottomDisplay.textContent === ""){
+            return;
+        };
+        if(topDisplay.textContent.includes(" + ") || topDisplay.textContent.includes(" - ") 
+            || topDisplay.textContent.includes(" * ") || topDisplay.textContent.includes(" / ")){
+            topDisplay.append(bottomDisplay.textContent);
+            let operators = /[+\-*/]/;
+            let problem = topDisplay.textContent;
+            let integerArray = problem.split(operators);
+            let numberOne = parseFloat(integerArray[0].trim());
+            let numberTwo = parseFloat(integerArray[1].trim());
+            let extractOperator = problem.split(" ");
+            let finalOperator = extractOperator[1];
+            bottomDisplay.textContent = operate(numberOne, numberTwo, finalOperator);
+            topDisplay.textContent = "";
+            decimalCount = 0;
+            equalCount = 0;
+        };
+        topDisplay.append(bottomDisplay.textContent, operator);
+        bottomDisplay.textContent = "";
+        decimalCount = 0;
+        equalCount = 0;
+    }else if (number.key === "-"){
+        let operator = " - ";
+
+        if(bottomDisplay.textContent === ""){
+            return;
+        };
+
+        if(topDisplay.textContent.includes(" + ") || topDisplay.textContent.includes(" - ") 
+            || topDisplay.textContent.includes(" * ") || topDisplay.textContent.includes(" / ")){
+            topDisplay.append(bottomDisplay.textContent);
+            let operators = /[+\-*/]/;
+            let problem = topDisplay.textContent;
+            let integerArray = problem.split(operators);
+            let numberOne = parseFloat(integerArray[0].trim());
+            let numberTwo = parseFloat(integerArray[1].trim());
+            let extractOperator = problem.split(" ");
+            let finalOperator = extractOperator[1];
+            bottomDisplay.textContent = operate(numberOne, numberTwo, finalOperator);
+            topDisplay.textContent = "";
+            decimalCount = 0;
+            equalCount = 0;
+        };
+        topDisplay.append(bottomDisplay.textContent, operator);
+        bottomDisplay.textContent = "";
+        decimalCount = 0;
+        equalCount = 0;
+
     }
 });
