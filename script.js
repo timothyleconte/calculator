@@ -35,7 +35,6 @@ let equalCount = 0;
 
 allButtons.forEach(button => { button.addEventListener("click", ()=> {
 
-
 //prevent multiple decimal places in a single number
 
     if (button.id === "decimal"){
@@ -78,7 +77,7 @@ allButtons.forEach(button => { button.addEventListener("click", ()=> {
         }else if (button.id === "zero"){
             bottomDisplay.textContent = "";
         }
-    }
+    };
 
 //prevent operators from being hit back to back and equals from being hit during an incomplete equation
 
@@ -94,7 +93,7 @@ allButtons.forEach(button => { button.addEventListener("click", ()=> {
         }else if (button.id === "equals"){
             return;
         }
-    }
+    };
 
 //prevent operators and equals from being hit before any digits are entered
 
@@ -110,7 +109,7 @@ allButtons.forEach(button => { button.addEventListener("click", ()=> {
         }else if (button.id === "equals"){
             return;
         }
-    }
+    };
 
     if(button.id === "one"){
         let integer = 1;
@@ -152,6 +151,14 @@ allButtons.forEach(button => { button.addEventListener("click", ()=> {
         let integer = 0;
         bottomDisplay.append(integer);
         equalCount = 0;
+        
+        //prevent user from dividing by 0
+
+        if(topDisplay.textContent.includes("/") && bottomDisplay.textContent === "0"){
+        bottomDisplay.textContent = "Undefined.";
+        topDisplay.textContent = "";
+        equalCount = 1;
+    }
     }else if (button.id === "add"){
         let operator = " + ";
         if(topDisplay.textContent.includes(" + ") || topDisplay.textContent.includes(" - ") 
@@ -277,6 +284,8 @@ allButtons.forEach(button => { button.addEventListener("click", ()=> {
 })
 
 //add keyboard support
+
+//still needs logic from previous function adapted for keyboard
 
 document.addEventListener("keydown", function(number){
 
@@ -455,5 +464,5 @@ document.addEventListener("keydown", function(number){
         bottomDisplay.textContent = "";
         topDisplay.textContent = "";
         decimalCount = 0;
-    }
+    };
 });
