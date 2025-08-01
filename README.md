@@ -25,3 +25,5 @@
 2143 - so I thought about the keyboard support again and I'm going to do it. I want to learn every bit I can from this project. Other than that, everything is complete! I've got the design how I like and everything is bug free. There seems to be some bugs on mobile but I have no idea how to address that yet. I'm going to start doing the keyboard stuff either tonight or tomorrow night!
 
 2201 - got all of the digits done and beginning to work through applying the shift key event listener; exhausted though so I will finish the code tomorrow and then --- project complete!
+
+7-31-25 2218 - worked today but I've pretty much finished the project. Built out keyboard support and added undefined for when a user divides by zero. I may still mess with functionality to allow a user to type in for example 8 / 0.2 -- currently this throws an error and the user would have to type 8 / .2 for it to function properly. Other than that, all I need to do is adapt the keyboard function logic to prevent weird errors like multiple decimals and such. I should be done tomorrow!
