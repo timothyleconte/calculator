@@ -424,5 +424,36 @@ document.addEventListener("keydown", function(number){
         decimalCount = 0;
         equalCount = 0;
 
+    }else if(number.key === "."){
+        let operator = ".";
+        bottomDisplay.append(operator);
+        equalCount = 0;
+    }else if(number.key === "Enter" || number.key === "="){
+        if(topDisplay.textContent === ""){
+            return;
+        }
+       topDisplay.append(bottomDisplay.textContent);
+       let operators = /[+\-*/]/;
+       let problem = topDisplay.textContent;
+       let integerArray = problem.split(operators);
+       let numberOne = parseFloat(integerArray[0].trim());
+       let numberTwo = parseFloat(integerArray[1].trim());
+       let extractOperator = problem.split(" ");
+       let finalOperator = extractOperator[1];
+       bottomDisplay.textContent = operate(numberOne, numberTwo, finalOperator);
+       topDisplay.textContent = "";
+       decimalCount = 0;  
+    }else if(number.key === "Backspace"){
+        let currentDisplay = bottomDisplay.textContent;
+        let newDisplay = currentDisplay.slice(0, -1);
+        bottomDisplay.textContent = newDisplay;
+        decimalCount = 0;
+            if (bottomDisplay.textContent.includes(".")){
+            decimalCount = 1;
+            };
+    }else if(number.key === "Delete"){
+        bottomDisplay.textContent = "";
+        topDisplay.textContent = "";
+        decimalCount = 0;
     }
 });
