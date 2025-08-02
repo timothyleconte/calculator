@@ -24,7 +24,7 @@ function operate(a, b, operator){
         return "something went really wrong";
     }
 
-}
+};
 
 let display = document.querySelector(".display");
 let bottomDisplay = document.querySelector(".bottom");
@@ -39,19 +39,19 @@ allButtons.forEach(button => { button.addEventListener("click", ()=> {
 
     if (button.id === "decimal"){
         decimalCount++;
-    }
+    };
     if (button.id === "decimal" && decimalCount > 1){
         return;
-    }
+    };
 
 //prevent user from hitting equal back to back
 
     if (button.id === "equals"){
         equalCount++;
-    }
+    };
     if (button.id === "equals" && equalCount > 1){
         return;
-    }
+    };
 
 //start new calculation after mathematical operation is completed and new digit hit
 
@@ -175,7 +175,7 @@ allButtons.forEach(button => { button.addEventListener("click", ()=> {
             topDisplay.textContent = "";
             decimalCount = 0;
             equalCount = 0;
-        }
+        };
         topDisplay.append(bottomDisplay.textContent, operator);
         bottomDisplay.textContent = "";
         decimalCount = 0;
@@ -196,7 +196,7 @@ allButtons.forEach(button => { button.addEventListener("click", ()=> {
             topDisplay.textContent = "";
             decimalCount = 0;
             equalCount = 0;
-        }
+        };
         topDisplay.append(bottomDisplay.textContent, operator);
         bottomDisplay.textContent = "";
         decimalCount = 0;
@@ -217,7 +217,7 @@ allButtons.forEach(button => { button.addEventListener("click", ()=> {
             topDisplay.textContent = "";
             decimalCount = 0;
             equalCount = 0;
-        }
+        };
         topDisplay.append(bottomDisplay.textContent, operator);
         bottomDisplay.textContent = "";
         decimalCount = 0;
@@ -238,7 +238,7 @@ allButtons.forEach(button => { button.addEventListener("click", ()=> {
             topDisplay.textContent = "";
             decimalCount = 0;
             equalCount = 0;
-        }
+        };
         topDisplay.append(bottomDisplay.textContent, operator);
         bottomDisplay.textContent = "";
         decimalCount = 0;
@@ -258,14 +258,14 @@ allButtons.forEach(button => { button.addEventListener("click", ()=> {
         decimalCount = 0;
             if (bottomDisplay.textContent.includes(".")){
             decimalCount = 1;
-            }
+            };
     }else if (button.id === "clear"){
         bottomDisplay.textContent = "";
         decimalCount = 0;
     }else if (button.id === "equals"){
         if(topDisplay.textContent === ""){
             return;
-        }
+        };
        topDisplay.append(bottomDisplay.textContent);
        let operators = /[+\-*/]/;
        let problem = topDisplay.textContent;
@@ -277,7 +277,7 @@ allButtons.forEach(button => { button.addEventListener("click", ()=> {
        bottomDisplay.textContent = operate(numberOne, numberTwo, finalOperator);
        topDisplay.textContent = "";
        decimalCount = 0;
-    }
+    };
 
 })
 
@@ -285,9 +285,74 @@ allButtons.forEach(button => { button.addEventListener("click", ()=> {
 
 //add keyboard support
 
-//still needs logic from previous function adapted for keyboard
-
 document.addEventListener("keydown", function(number){
+
+
+    if (number.key === "."){
+        decimalCount++;
+    }
+    if (number.key === "." && decimalCount > 1){
+        return;
+    };
+
+    if (number.key === "Enter"){
+        equalCount++;
+    }
+    if (number.key === "Enter" && equalCount > 1){
+        return;
+    }
+
+    if (equalCount >= 1){
+        if(number.key === "1"){
+            bottomDisplay.textContent = "";
+        }else if (number.key === "2"){
+            bottomDisplay.textContent = "";
+        }else if (number.key === "3"){
+            bottomDisplay.textContent = "";
+        }else if (number.key === "4"){
+            bottomDisplay.textContent = "";
+        }else if (number.key === "5"){
+            bottomDisplay.textContent = "";
+        }else if (number.key === "6"){
+            bottomDisplay.textContent = "";
+        }else if (number.key === "7"){
+            bottomDisplay.textContent = "";
+        }else if (number.key === "8"){
+            bottomDisplay.textContent = "";
+        }else if (number.key === "9"){
+            bottomDisplay.textContent = "";
+        }else if (number.key === "0"){
+            bottomDisplay.textContent = "";
+        }
+    };
+
+    if (bottomDisplay.textContent === ""){
+        if (number.key === "+"){
+            return;
+        }else if (number.key === "-"){
+            return;
+        }else if (number.key === "*"){
+            return;
+        }else if (number.key === "/"){
+            return;
+        }else if (number.key === "Enter"){
+            return;
+        }
+    };
+
+    if (bottomDisplay.textContent === "" && topDisplay.textContent === ""){
+        if (number.key === "+"){
+            return;
+        }else if (number.key === "-"){
+            return;
+        }else if (number.key === "*"){
+            return;
+        }else if (number.key === "/"){
+            return;
+        }else if (number.key === "Enter"){
+            return;
+        }
+    };
 
     if (number.key === "1"){
         let integer = 1;
@@ -329,6 +394,11 @@ document.addEventListener("keydown", function(number){
         let integer = 0;
         bottomDisplay.append(integer);
         equalCount = 0;
+        if(topDisplay.textContent.includes("/") && bottomDisplay.textContent === "0"){
+        bottomDisplay.textContent = "Undefined.";
+        topDisplay.textContent = "";
+        equalCount = 1;
+    }
     }else if (number.key === "*"){
         let operator = " * ";
         
@@ -437,7 +507,7 @@ document.addEventListener("keydown", function(number){
         let operator = ".";
         bottomDisplay.append(operator);
         equalCount = 0;
-    }else if(number.key === "Enter" || number.key === "="){
+    }else if(number.key === "Enter"){
         if(topDisplay.textContent === ""){
             return;
         }
